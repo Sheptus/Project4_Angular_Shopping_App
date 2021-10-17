@@ -1,0 +1,200 @@
+[
+  {
+    "_id": {
+      "$oid": "5f4a79228490083a4be5d1cc"
+    },
+    "role": "admin",
+    "email": "sheptus@gmail.com",
+    "password": "$2a$10$o9g9CPN4BgJj.fPWty0j3O6H2c2ljDfQwC1NI2695TgR8Gpa0QsHO",
+    "createdAt": {
+      "$date": "2020-08-29T15:49:54.732Z"
+    },
+    "updatedAt": {
+      "$date": "2020-08-29T15:49:54.732Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f4a794b8490083a4be5d1ce"
+    },
+    "email": "zis@gmail.com",
+    "password": "$2a$10$K3ZZ.zxTwSUOrNL.Gk/sweeMflRnbal1VoD95ab.HvTfPf35ASjSW",
+    "createdAt": {
+      "$date": "2020-08-29T15:50:35.399Z"
+    },
+    "updatedAt": {
+      "$date": "2020-08-29T15:50:35.399Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f4a7a87da0c243b07186ec5"
+    },
+    "email": "avi@gmail.com",
+    "password": "$2a$10$8RRMzgX18vJWav84Nc76mOkqGDMaNtJFPzFn3wOPOAi2HeYpHBtwa",
+    "createdAt": {
+      "$date": "2020-08-29T15:55:51.589Z"
+    },
+    "updatedAt": {
+      "$date": "2020-08-29T15:55:51.589Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f4a863c8d58c540ea48dd17"
+    },
+    "email": "avi@walla.com",
+    "password": "$2a$10$rLzhUzF.B2O5RZphvylPS./bb9BiUaDfoxyYwBFFzvPeiipzvZOVi",
+    "createdAt": {
+      "$date": "2020-08-29T16:45:48.523Z"
+    },
+    "updatedAt": {
+      "$date": "2020-08-29T16:45:48.523Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f538849d45d654470321c83"
+    },
+    "email": "david@walla.com",
+    "password": "$2a$10$8BuJVqg3sYPyBmgELGCjZuRqTFeLwbaQ.FL7NIZk4H.bO4Pwcu0DC",
+    "createdAt": {
+      "$date": "2020-09-05T12:44:57.006Z"
+    },
+    "updatedAt": {
+      "$date": "2020-09-05T12:44:57.006Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f6f4b7c5e242ead0904bf46"
+    },
+    "role": "User",
+    "email": "dor.s@gmail.com",
+    "name": "dor",
+    "lastName": "shalom",
+    "id": 12345,
+    "password": "$2a$10$ogWW9lNV2TPKcIL6MzWH7.qO2qb2AE2iPymE3X7v8Y3JSH0dFx/Rq",
+    "city": "Ashdod",
+    "street": "rogozin 12",
+    "createdAt": {
+      "$date": "2020-09-26T14:09:00.486Z"
+    },
+    "updatedAt": {
+      "$date": "2020-09-26T14:09:00.486Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f71ccc92ab26910b0e01702"
+    },
+    "role": "member",
+    "email": "adam@gmail.com",
+    "password": "$2a$10$KIO9huPhrbLB9xhNJ206jOk0wey6N2hHnxgSVtvtFSIpR7aqGYsou",
+    "name": "adam",
+    "lastName": "adam",
+    "id": 123456,
+    "city": "nyc",
+    "street": "street 34",
+    "createdAt": {
+      "$date": "2020-09-28T11:45:13.643Z"
+    },
+    "updatedAt": {
+      "$date": "2020-09-28T11:45:13.643Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5e89d23c8f8bc90010e8b0db"
+    },
+    "name": "Almond Milk",
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f73a91be3d7b04a831b2bc5"
+    },
+    "role": "user",
+    "email": "dana.dana@gmail.com",
+    "name": "dana",
+    "lastName": "dana",
+    "id": 121314,
+    "password": "$2a$10$MFRiGLx28lQ/DH/oMlYWSuJbT8Ys/eT1HxIrkFCNEbc2Y62tnsurq",
+    "city": "Tel Aviv",
+    "street": "TLV 12",
+    "createdAt": {
+      "$date": "2020-09-29T21:37:31.477Z"
+    },
+    "updatedAt": {
+      "$date": "2020-09-29T21:37:31.477Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f74bbf600138a2f25969d46"
+    },
+    "role": "User",
+    "id": 1234567,
+    "email": "dor.dor@gmail.con",
+    "password": "$2a$10$O3HkRI3OMYuRsWREinA5XeIogWC9N4Y1ABgZx1uRqJJPZjvodWMlS",
+    "city": "Ashdod",
+    "street": "asass",
+    "name": "avi",
+    "lastName": "avi",
+    "createdAt": {
+      "$date": "2020-09-30T17:10:14.811Z"
+    },
+    "updatedAt": {
+      "$date": "2020-09-30T17:10:14.811Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f74d6e1ffadf53f757d4d3d"
+    },
+    "role": "admin",
+    "id": 12345,
+    "email": "admin@admin.com",
+    "password": "$2a$10$5jYhYkzUxyRQhP50tzuKJezU8fkGBwDvOBc7/bhj7O1oGMbGN4LCK",
+    "city": "admin",
+    "street": "admin",
+    "name": "admin",
+    "lastName": "admin",
+    "createdAt": {
+      "$date": "2020-09-30T19:05:05.269Z"
+    },
+    "updatedAt": {
+      "$date": "2020-09-30T19:05:05.269Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "5f75a521b20dbc13c1041838"
+    },
+    "role": "member",
+    "id": 1212,
+    "email": "user@user.com",
+    "password": "$2a$10$lV4ESSOdYgUaVC.REnU2jeKbfu0gRayzpvuUgFOGfFVjx6UziBrHG",
+    "city": "user",
+    "street": "user",
+    "name": "user",
+    "lastName": "useruser",
+    "createdAt": {
+      "$date": "2020-10-01T09:45:05.315Z"
+    },
+    "updatedAt": {
+      "$date": "2020-10-01T09:45:05.315Z"
+    },
+    "__v": 0
+  }
+]

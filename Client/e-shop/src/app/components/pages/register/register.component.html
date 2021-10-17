@@ -1,0 +1,174 @@
+<h4 class="text-center">Register</h4>
+<div class="container">
+  <mdb-card
+    bgcolor="login-card"
+    class="wow fadeIn z-depth-1"
+    data-wow-delay="0.2s"
+    style="animation-name: none; visibility: visible"
+  >
+    <mdb-card-body>
+      <form
+        *ngIf="!stepper"
+        [formGroup]="registerFormFirst"
+        (ngSubmit)="onRegisterFirst()"
+        class="mt-5"
+      >
+        <div class="md-form form-group">
+          <label for="id">ID</label>
+          <input
+            type="number"
+            class="form-control"
+            [class.is-invalid]="id.invalid && id.touched"
+            formControlName="id"
+            mdbInput
+            required
+          />
+          <div *ngIf="id.invalid && id.touched">
+            <small class="text-danger" *ngIf="id.errors?.required"
+              >ID is required</small
+            >
+          </div>
+        </div>
+
+        <div class="md-form form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            [class.is-invalid]="id.invalid && id.touched"
+            formControlName="email"
+            mdbInput
+            required
+          />
+          <div *ngIf="email.invalid && email.touched">
+            <small class="text-danger" *ngIf="email.errors?.required"
+              >Email is required</small
+            >
+            <small class="text-danger" *ngIf="email.errors?.email"
+              >Email incorrect</small
+            >
+            <small class="text-danger" *ngIf="email.errors?.nonUniqueEmail"
+              >Email not available</small
+            >
+          </div>
+        </div>
+
+        <div class="md-form form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            formControlName="password"
+            mdbInput
+            required
+          />
+        </div>
+
+        <div class="md-form form-group">
+          <label for="password-confirm">Password Confirm</label>
+          <input
+            type="password"
+            class="form-control"
+            [class.is-invalid]="registerFormFirst.errors?.misMatch"
+            formControlName="passwordConfirm"
+            mdbInput
+            required
+          />
+          <small class="text-danger" *ngIf="registerFormFirst.errors?.misMatch"
+            >Password Do Not Match</small
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary px-5">Next</button>
+      </form>
+    </mdb-card-body>
+  </mdb-card>
+
+  <mdb-card
+    bgcolor="login-card"
+    class="wow fadeIn z-depth-1"
+    data-wow-delay="0.2s"
+    style="animation-name: none; visibility: visible"
+  >
+    <mdb-card-body>
+      <form
+        *ngIf="stepper"
+        [formGroup]="registerFormSecond"
+        (ngSubmit)="onRegisterSecond()"
+        class="mt-5"
+      >
+        <div class="md-form form-group">
+          <label for="city">City</label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-invalid]="city.invalid && city.touched"
+            formControlName="city"
+            mdbInput
+            required
+          />
+          <div *ngIf="city.invalid && city.touched">
+            <small class="text-danger" *ngIf="city.errors?.required"
+              >City is required</small
+            >
+          </div>
+        </div>
+
+        <div class="md-form form-group">
+          <label for="street">Street</label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-invalid]="street.invalid && street.touched"
+            formControlName="street"
+            mdbInput
+            required
+          />
+          <div *ngIf="street.invalid && street.touched">
+            <small class="text-danger" *ngIf="street.errors?.required"
+              >Street is required</small
+            >
+          </div>
+        </div>
+
+        <div class="md-form form-group">
+          <label for="firstName">First Name</label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-invalid]="name.invalid && name.touched"
+            formControlName="name"
+            mdbInput
+            required
+          />
+          <div *ngIf="name.invalid && name.touched">
+            <small class="text-danger" *ngIf="name.errors?.required"
+              >First Name is required</small
+            >
+          </div>
+        </div>
+
+        <div class="md-form form-group">
+          <label for="last-name">Last Name</label>
+          <input
+            type="text"
+            class="form-control"
+            [class.is-invalid]="lastName.invalid && lastName.touched"
+            formControlName="lastName"
+            required
+          />
+          <div *ngIf="lastName.invalid && lastName.touched">
+            <small class="text-danger" *ngIf="lastName.errors?.required"
+              >Last Name is required</small
+            >
+          </div>
+        </div>
+        <div class="alert alert-danger" *ngIf="error">
+          <small class="text-danger">{{ error }}</small>
+        </div>
+        <button type="submit" class="btn btn-primary px-5">Register</button>
+      </form>
+    </mdb-card-body>
+  </mdb-card>
+</div>

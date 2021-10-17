@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="card my-2">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-2 col-sm-12">
+          <img [src]="cartProduct.productID.imageURL" class="img-fluid" />
+        </div>
+        <div class="col-md-2 col-sm-12">
+          <p class="text-center">amount: {{ cartProduct.amount }}</p>
+        </div>
+        <div class="col-md-2 col-sm-12">
+          <p class="text-center">{{ cartProduct.productID.pName }}</p>
+        </div>
+        <div class="col-md-2 col-sm-12">
+          <p class="text-center">
+            price: {{ cartProduct.productID.price | currency: "USD" }}
+          </p>
+        </div>
+        <div class="col-md-2 col-sm-12">
+          <p class="text-center">
+            total: {{ cartProduct.totalPrice | currency: "USD" }}
+          </p>
+        </div>
+        <div class="col-md-2 col-sm-12">
+          <button
+            *ngIf="isCart"
+            (click)="deleteCartProduct(cartProduct._id)"
+            class="btn btn-outline-danger btn-block"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

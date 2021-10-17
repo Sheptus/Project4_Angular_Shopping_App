@@ -1,0 +1,48 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Product</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="createProductForm">
+      <div class="form-group">
+        <label>Product Name</label>
+        <input type="text" class="form-control" formControlName="name" />
+      </div>
+      <div class="form-group">
+        <label>Product Price</label>
+        <input type="number" class="form-control" formControlName="price" />
+      </div>
+      <div class="form-group">
+        <label>Product Category</label>
+        <input type="text" class="form-control" formControlName="type" />
+      </div>
+      <div class="form-group">
+        <label>Product Image</label>
+        <input type="text" class="form-control" formControlName="image" />
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="save()">
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<hr />
+
+<button (click)="open(content)" class="btn btn-outline-primary">
+  Add Product<mdb-icon class="ml-2" fas icon="plus-circle"></mdb-icon>
+</button>
+
+<hr />
+
+<pre>{{ closeResult }}</pre>

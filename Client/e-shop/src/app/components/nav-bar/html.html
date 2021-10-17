@@ -1,0 +1,52 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark indigo md-3">
+  <!-- Navbar brand -->
+  <mdb-navbar-brand
+    ><a class="navbar-brand" [routerLink]="'.'"
+      >SeperMarket</a
+    ></mdb-navbar-brand
+  >
+
+  <!-- Collapsible content -->
+  <links>
+    <button
+      mdbBtn
+      color="primary"
+      class="waves-light"
+      type="button"
+      (click)="test.toggle()"
+      mdbWavesEffect
+    >
+      Menu
+    </button>
+
+    <div mdbCollapse [isCollapsed]="true" #test="bs-collapse">
+      <!-- Links -->
+      <!-- Login Link -->
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" mdbWavesEffect [routerLink]="['/login']">Login</a>
+        </li>
+        <!-- Register Link -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/register']" mdbWavesEffect
+            >Register</a
+          >
+        </li>
+        <!-- Store Link -->
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/store']" mdbWavesEffect>Store</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Search form
+    <form class="form-inline waves-light" mdbWavesEffect>
+      <div class="md-form my-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search" />
+      </div>
+    </form> -->
+  </links>
+  <!-- Collapsible content -->
+</mdb-navbar>
+<!--/.Navbar-->

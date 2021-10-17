@@ -1,0 +1,66 @@
+<form [formGroup]="orderDetailsForm" (ngSubmit)="orderFinalize()">
+  <div class="form-group">
+    <label>City</label>
+    <input
+      (dblclick)="getCity()"
+      [class.is-invalid]="city.invalid && city.touched"
+      type="text"
+      class="form-control"
+      placeholder="Enter city"
+      formControlName="city"
+    />
+    <div *ngIf="city.invalid && city.touched">
+      <small class="text-danger" *ngIf="city.errors?.required"
+        >city is required</small
+      >
+    </div>
+  </div>
+  <div class="form-group">
+    <label>Street</label>
+    <input
+      (dblclick)="getStreet()"
+      [class.is-invalid]="street.invalid && street.touched"
+      type="text"
+      class="form-control"
+      placeholder="Enter street"
+      formControlName="street"
+    />
+    <div *ngIf="street.invalid && street.touched">
+      <small class="text-danger" *ngIf="street.errors?.required"
+        >street is required</small
+      >
+    </div>
+  </div>
+  <div class="form-group mb-5">
+    <label>Shipping Date</label>
+    <input
+      [class.is-invalid]="dateOfOrder.invalid && dateOfOrder.touched"
+      type="date"
+      class="form-control"
+      formControlName="dateOfOrder"
+    />
+    <div *ngIf="dateOfOrder.invalid && dateOfOrder.touched">
+      <small class="text-danger" *ngIf="dateOfOrder.errors?.required"
+        >date of order is required</small
+      >
+    </div>
+  </div>
+  <h4>Payments</h4>
+  <hr />
+  <div class="form-group">
+    <label>Credit Card</label>
+    <input
+      [class.is-invalid]="card.invalid && card.touched"
+      type="number"
+      class="form-control"
+      placeholder="Enter card"
+      formControlName="card"
+    />
+    <div *ngIf="card.invalid && card.touched">
+      <small class="text-danger" *ngIf="card.errors?.required"
+        >card is required</small
+      >
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Order</button>
+</form>

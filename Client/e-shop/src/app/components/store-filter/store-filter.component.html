@@ -1,0 +1,18 @@
+<div class="position-sticky sticky-top mt-5">
+  <div class="list-group">
+    <a
+      class="list-group-item flex-fill list-group-item-action"
+      [class.active]="!category"
+      [routerLink]="isAdmin ? ['/admin'] : ['/store']"
+      >All Categories</a
+    >
+    <a
+      *ngFor="let c of categories; let i = index"
+      class="list-group-item flex-fill list-group-item-action"
+      [routerLink]="isAdmin ? ['/admin'] : ['/store']"
+      [queryParams]="{ category: c.type }"
+      [class.active]="category === c.type"
+      >{{ c.type }}</a
+    >
+  </div>
+</div>

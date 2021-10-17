@@ -1,0 +1,40 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+    <button
+      type="button"
+      class="close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="editForm">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" formControlName="pName" />
+      </div>
+      <div class="form-group">
+        <label>Type</label>
+        <input type="text" class="form-control" formControlName="type" />
+      </div>
+      <div class="form-group">
+        <label>Image</label>
+        <input type="text" class="form-control" formControlName="imageURL" />
+      </div>
+      <div class="form-group">
+        <label>Price</label>
+        <input type="text" class="form-control" formControlName="price" />
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="edit()">
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<button class="btn btn-block btn-success" (click)="open(content)">Edit</button>

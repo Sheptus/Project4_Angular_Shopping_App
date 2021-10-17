@@ -1,0 +1,64 @@
+<div class="container-fluid">
+  <!-- <hr>
+  <div class="card-body">
+      {{ cartProducts | json }}
+  </div> -->
+  <h5>Shopping Cart</h5>
+  <p>
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="isCollapsed = !isCollapsed"
+      [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample"
+    >
+      Open/Close
+    </button>
+  </p>
+  <div id="collapseExample" [ngbCollapse]="isCollapsed">
+    <div class="card" *ngIf="!cartProducts.length">
+      <div class="card-body">
+        <h4>No Products In Cart</h4>
+      </div>
+    </div>
+    <app-cart
+      [isCart]="true"
+      *ngFor="let p of cartProducts"
+      [cartProduct]="p"
+      (deleted)="onDeleted($event)"
+    ></app-cart>
+    <div class="container">
+      <a
+        *ngIf="cartProducts.length"
+        class="btn btn-primary btn-lg mt-2 px-5"
+        [routerLink]="['/order']"
+        >Order</a
+      >
+      <p *ngIf="cartProducts.length" class="d-inline-block ml-5 border p-2">
+        final price: {{ totalPrice | currency: "USD" }}
+      </p>
+    </div>
+  </div>
+
+  <hr />
+  <div class="row">
+    <!-- <h2 class="py-5 text-center">Products </h2> -->
+    <div class="col-lg-2">
+      <app-store-filter
+        *ngIf="!searchText"
+        [category]="category"
+      ></app-store-filter>
+    </div>
+    <div class="col-lg-10">
+      <app-product-search *ngIf="!category"></app-product-search>
+      <div class="row">
+        <app-store-items
+          (onUpdateCartProducts)="updateCartProducts($event)"
+          class="col-lg-3 col-md-4 col-sm-6 my-3"
+          *ngFor="let p of products | search: searchText:'pName'"
+          [product]="p"
+        ></app-store-items>
+      </div>
+    </div>
+  </div>
+</div>

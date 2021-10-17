@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+  <a class="navbar-brand" [routerLink]="'.'">E-Shop</a>
+
+  <!-- Step 3: Toggle the value of the property when the toggler button is clicked. -->
+  <button
+    class="navbar-toggler"
+    type="button"
+    (click)="isMenuCollapsed = !isMenuCollapsed"
+  >
+    &#9776;
+  </button>
+
+  <!-- Step 2: Add the ngbCollapse directive to the element below. -->
+  <div [ngbCollapse]="isMenuCollapsed" class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li *ngIf="signedIn" class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/store']"
+          routerLinkActive="active"
+          (click)="isMenuCollapsed = true"
+          >Store</a
+        >
+      </li>
+      <li *ngIf="signedIn && isAdmin" class="nav-item">
+        <a
+          class="nav-link"
+          [routerLink]="['/admin']"
+          routerLinkActive="active"
+          (click)="isMenuCollapsed = true"
+          >Admin</a
+        >
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <ng-container *ngIf="!signedIn">
+        <li class="nav-item">
+          <!-- Step 4: Close the menu when a link is clicked. -->
+          <a
+            class="nav-link"
+            [routerLink]="['/login']"
+            routerLinkActive="active"
+            (click)="isMenuCollapsed = true"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/register']"
+            routerLinkActive="active"
+            (click)="isMenuCollapsed = true"
+            >Register</a
+          >
+        </li>
+      </ng-container>
+
+      <li *ngIf="signedIn" class="nav-item">
+        <a class="nav-link" style="cursor: pointer" (click)="logout()"
+          >Logout</a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

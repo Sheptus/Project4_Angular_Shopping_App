@@ -1,0 +1,26 @@
+<div class="card">
+  <img
+    class="card-img-top"
+    [src]="product.imageURL"
+    alt="Card
+      image
+      cap"
+  />
+
+  <div class="card-body">
+    <h5 class="card-title">{{ product.pName }}</h5>
+    <p class="card-text">type: {{ product.categoryID.type }}</p>
+    <p class="card-text">price: {{ product.price | currency: "USD" }}</p>
+  </div>
+
+  <div *ngIf="!isAdmin" class="card-footer">
+    <app-store-modal
+      (onUpdateCartProducts)="onUpdateCartProduct($event)"
+      [product]="product"
+    ></app-store-modal>
+  </div>
+  <div *ngIf="isAdmin" class="card-footer">
+    <!-- <button (click)="edit(product)" class="btn btn-block btn-primary">Edit</button> -->
+    <app-admin-edit (onEdit)="edit()" [product]="product"></app-admin-edit>
+  </div>
+</div>

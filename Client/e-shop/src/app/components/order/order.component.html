@@ -1,0 +1,23 @@
+<div class="container-fluid">
+  <button (click)="goBack()" class="btn btn-primary px-5 mb-5">
+    Back To Shopping
+  </button>
+  <div class="row">
+    <div class="col-lg-7">
+      <h1 class="mb-5">My Cart</h1>
+      <!-- <app-products-search></app-products-search> -->
+      <app-cart
+        [isCart]="false"
+        *ngFor="let p of cartProducts"
+        [cartProduct]="p"
+      ></app-cart>
+      <hr />
+      <h6>Total Price:{{ totalPrice | currency: "USD" }}</h6>
+      <hr />
+    </div>
+    <div class="col-lg-5">
+      <h1 class="mb-5">My Order</h1>
+      <app-order-details></app-order-details>
+    </div>
+  </div>
+</div>
